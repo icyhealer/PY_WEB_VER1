@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post List</title>
+    {% load staticfiles %}
+    <style>
+        a{
+        font-family: 'Montserrat', sans-serif;
+        font-size:100px;
+        }
+
+        p{
+        color:red;
+        font-family: 'Montserrat', sans-serif;
+        font-size:20px
+        }
+
+        .box{
+        border: 5px solid gray;
+        height:auto;
+        width:auto;
+        display:inline-block;
+        text-align:center;
+        }
+
+        img{
+        width:auto;
+        height:auto;
+        margin:auto;
+        display:block
+        }
+    </style>
+    <a>BLOG</a><b>  made with django</b>
+</head>
+<body bgcolor="lightgray">
+
+<div id="content">
+    {% for post in object_list %}
+    <div class="box">
+        <p>{{post.title}}</p>
+        <img src="{{ post.image.url }}">
+        <b><p>Create Date:</p>{{ post.create_date }}</b>
+        <b><p>Modify Date:</p>{{ post.modify_date }}</b>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

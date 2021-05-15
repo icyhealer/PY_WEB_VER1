@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            color : red;
+            font-size : 100px;
+            text-align:center;
+            }
+        .small{
+            font-size : 25px;
+            color:gray
+            }
+        dt{
+            color : gray;
+            font-size : 50px;
+            text-align:center;
+            }
+        a:link {
+            color: gray; text-decoration: none;
+            }
+        a:visited {
+            color: gray; text-decoration: none;
+        }
+        a:hover {
+            color: black; text-decoration: underline;
+        }
+    </style>
+</head>
+<body bgcolor="white">
+<div id="content">
+
+    <h1 id="title">
+        최<span class="small">고로</span>
+        애<span class="small">정하는</span>
+        유<span class="small">튜브</span>
+    </h1>
+
+    <ul>
+      {% for bookmark in object_list %}
+        <dt><a href="{% url 'detail' bookmark.id %}">{{ bookmark }}</a></dt>
+      {% endfor %}
+    </ul>
+
+</div>
+</body>
+</html>
